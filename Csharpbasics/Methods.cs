@@ -48,7 +48,7 @@ public class MethodTeacher
 }    
 public class MethodTester
 {
-    static void Main()
+    static void Main12()
     {
         MethodTeacher methodTeacher = new MethodTeacher();
         int[] numbers = {34, 2, 6, 3, 12, 78, 56, 78, 100};

@@ -24,9 +24,6 @@ class ModifierDemo
         obj1.DoAnotherThing();
         //can't be access as it is by default private
         //obj1.DoSomething() 
-
-        Person newPerson = new Person();
-        newPerson.name = "Anjali";
     }
 
     void DoAnotherThing()

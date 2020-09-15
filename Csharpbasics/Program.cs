@@ -1,14 +1,10 @@
 ﻿using System;
-
-namespace Csharpbasics
+using LearnCollections;
+class Program
 {
-    class Program
-    {
-        static void Main1()
+        static void Main(string[] args)
         {
-            Console.Write("write your name:");
-            string x=Console.ReadLine();
-            Console.WriteLine ("hi,"+x);
+        Collections collections = new Collections();
+        collections.LearnDictionary();
         }
-    }
 }
