@@ -1,10 +1,14 @@
-﻿using System;
-using LearnCollections;
-class Program
+﻿using LearnCollections;
+
+public class Program
 {
-        static void Main(string[] args)
-        {
-        Collections collections = new Collections();
-        collections.LearnDictionary();
-        }
+    static void Main()
+    {
+        var square = new Square(33.45);
+        square.Display();
+
+        var rectangle = new Rectangle(33.45, 50.2);
+        var rectangleArea = rectangle.GetArea();
+
+    }
 }
