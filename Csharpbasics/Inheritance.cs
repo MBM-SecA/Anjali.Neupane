@@ -10,7 +10,7 @@ public abstract class Shape
     //define abstract members when you want to force derived classes to implement their own logic
     public abstract double GetArea();
 
-    public abstract double GetCircumference(); //we can do like this if there is only one line of code.
+    public abstract double GetCircumference();
 
     public virtual void Display()
     {
@@ -20,7 +20,7 @@ public abstract class Shape
 }
 
 
-public class Square : Shape, IShapeWithSides //this is how we inherit, using colon
+public class Square : Shape, IShapeWithSides 
 {
     public Square(double side)
     {
