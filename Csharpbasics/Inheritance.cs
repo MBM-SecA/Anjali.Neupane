@@ -20,26 +20,26 @@ public abstract class Shape
 }
 
 
-public class Square : Shape, IShapeWithSides 
-{
-    public Square(double side)
-    {
-        Side = side;
-    }
+//public class Square : Shape, IShapeWithSides 
+//{
+//    public Square(double side)
+//    {
+//        Side = side;
+ //   }
 
-    public double Side { get; set;}
-    public override double GetArea() => Side * Side;
-    public override double GetCircumference() => 4 * Side;
+ //   public double Side { get; set;}
+ //   public override double GetArea() => Side * Side;
+ //   public override double GetCircumference() => 4 * Side;
 
-    public override void Display()
-    {
-        Console.WriteLine($"Displaying results for Square with side {Side}: \n");
-        Console.WriteLine($"Area : {this.GetArea()} square unit \n");   
-        Console.WriteLine($"Circumference : {this.GetCircumference()} unit \n");
-    }
+ //   public override void Display()
+ //   {
+ //       Console.WriteLine($"Displaying results for Square with side {Side}: \n");
+ //       Console.WriteLine($"Area : {this.GetArea()} square unit \n");   
+ //       Console.WriteLine($"Circumference : {this.GetCircumference()} unit \n");
+ //   }
 
-    public double GetDiagonal() => Math.Sqrt(2 * Side * Side);
-}
+ //   public double GetDiagonal() => Math.Sqrt(2 * Side * Side);
+//}
 
 public class Rectangle : Shape, IShapeWithSides //this is how we inherit, using colon
 {
@@ -55,9 +55,21 @@ public class Rectangle : Shape, IShapeWithSides //this is how we inherit, using 
 
     public override double GetArea() => Length * Length;
     public override double GetCircumference() => 2 * (Length + Breadth);
+    public  override void Display()
+    {
+        Console.WriteLine ($"Displaying results for rectangle [{Length}*{Breadth}]");
+    
+    }
 
     public double GetDiagonal() => Math.Sqrt(Length * Length + Breadth * Breadth);
 
+}
+public class Square : Rectangle
+{
+    public Square (double side) : base (side, side)
+    {
+
+    }
 }
 
 public class Circle : Shape
