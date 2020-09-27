@@ -71,7 +71,39 @@ namespace LINQ
             {
                 Console.WriteLine(country);
             }
-
-        }
+            //Projections
+            //var result5 = numbers.Select (x=> x*x);
+            var result5 = from num in numbers
+                            select num* num;
+            foreach(var square in result5)
+            {
+                Console.WriteLine(square);
+            }
+            //Ordering
+            var result6 = from num in numbers
+                            orderby num 
+                            select num;
+            //Partitioning
+            var result7 = numbers.Skip(5).Take(5); 
+            //Quantifier
+            var result8 = numbers.Any (x => x%2 == 0);
+            var result9 = numbers.All (x => x%2 == 0);
+            var result10 =numbers.Contains(34);
+            var result11 = Enumerable.Range(1,1000);
+            var result11 = Enumerable.Repeat("Hello World!", 10);
+             foreach(var square in result6)
+            {
+                Console.WriteLine(square);
+            }
+            foreach(var num in result7)
+            {
+                Console.WriteLine(num);
+            }
+            foreach(var num in result12)
+            {
+                Console.WriteLine(num);
+            }
+        }        
     }
+       
 }
