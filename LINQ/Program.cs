@@ -15,7 +15,7 @@ namespace LINQ
 
             // Fetch numbers which are greater than 50 and less than 70
 
-            // Using nethod syntax - lambda expression
+            // Using method syntax - lambda expression
             var result1 = numbers.Where(x => x > 50 && x < 70);
 
             // Using sql query syntax - Query expression
@@ -38,39 +38,6 @@ namespace LINQ
             // {
             //     Console.WriteLine(name);
             // }
-
-
-            // Program for countries
-            var countries = Country.GetCountries();
-
-            var asianCountries = from country in countries
-                                 where country.Continent == "Asia"
-                                 select country.Name;
-            // foreach (var country in asianCountries)
-            // {
-            //     Console.WriteLine(country);
-            // }
-
-
-
-            // Q1: List countries in EUROPE which has population less than 100k
-             var europeCountries = from country in countries
-                                   where country.Continent == "Europe" && country.Population < 100000
-                                   select country.Name;                     
-
-            foreach(var country in europeCountries)
-            {
-                Console.WriteLine(country);
-            }
-            // Q2: List countries in ASIA which are never invaded.
-            var asianCountries1 = from country in countries
-                                  where country.Continent == "Asia" && country.IndependenceDay == default
-                                  select country.Name;
-            
-            foreach(var country in asianCountries1)
-            {
-                Console.WriteLine(country);
-            }
             //Projections
             //var result5 = numbers.Select (x=> x*x);
             var result5 = from num in numbers
@@ -90,7 +57,7 @@ namespace LINQ
             var result9 = numbers.All (x => x%2 == 0);
             var result10 =numbers.Contains(34);
             var result11 = Enumerable.Range(1,1000);
-            var result11 = Enumerable.Repeat("Hello World!", 10);
+            var result12 = Enumerable.Repeat("Hello World!", 10);
              foreach(var square in result6)
             {
                 Console.WriteLine(square);
@@ -102,7 +69,9 @@ namespace LINQ
             foreach(var num in result12)
             {
                 Console.WriteLine(num);
-            }
+            } 
+            ComplexType complexType = new ComplexType();
+            complexType.LearnLINQ();
         }        
     }
        
