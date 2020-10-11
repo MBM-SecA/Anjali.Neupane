@@ -1,6 +1,8 @@
 @model List<Person>
-
-<h1>All Employees..</h1>
+@{
+  ViewData["TitlePhrase"]="All Employees";
+}
+<h1>All Employees(@Model.Count)</h1>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -16,7 +18,11 @@
     {
 
       <tr scope="row">
-      <td>@employee.FirstName</td>
+        <td>
+          <a href = "/employee/detail?firstName = @employee.FirstName">
+          @employee.FirstName
+          </a>
+        </td>
       <td>@employee.SurName</td>
       <td>@employee.Address</td>
       <td>@employee.Gender</td>
