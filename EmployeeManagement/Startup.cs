@@ -26,7 +26,7 @@ namespace EmployeeManagement
         {
             services.AddDbContext<EMSContext>(options => 
 
-                options.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=EMSContext;Integrated Security=True;")
+                options.UseSqlite(@"Data Source=Ems.db")
 
             );
             services.AddControllersWithViews();
