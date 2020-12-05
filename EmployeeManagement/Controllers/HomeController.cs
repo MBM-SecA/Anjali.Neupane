@@ -11,16 +11,19 @@ namespace EmployeeManagement.Controllers
 {
     public class HomeController : Controller
     {
+        private EMSContext db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger <HomeController> logger, EMSContext _db)
         {
             _logger = logger;
+            db= _db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var employees = db.People.ToList();
+            return View(employees);
         }
 
         public IActionResult Privacy()

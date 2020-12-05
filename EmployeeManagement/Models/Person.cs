@@ -13,7 +13,7 @@ public class Person
     public string Address{get;set;}
     public char? Gender{get;set;}='F';
     public double? Salary {get;set;}
-
+    /*
     public static List <Person> GetEmployees()
     {
         //Object initializer syntax
@@ -25,4 +25,6 @@ public class Person
         List <Person> employees =  new List<Person>() { empl1, empl2, empl3, empl4, empl5};
         return employees;
     }
+    */
+    
 }  
