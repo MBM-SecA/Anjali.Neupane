@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 public class EmployeeController : Controller
 {
     private EMSContext db;
@@ -12,7 +13,8 @@ public class EmployeeController : Controller
     }
     public ActionResult Index()
     {
-        var employees = db.People.ToList();
+        //var employees = db.People.ToList();       
+        var employees = db.People.Include(x => x.Department).ToList();
         return View(employees);
 
     }
@@ -27,7 +29,9 @@ public class EmployeeController : Controller
     }
     
     public ActionResult Add()
-    {
+    {    
+        var departments = db.Departments.ToList();
+        ViewData["DepartmentOptions"] = departments;
         return View();
     }
     [HttpPost]

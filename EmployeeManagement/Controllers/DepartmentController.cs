@@ -42,6 +42,11 @@ public class DepartmentController : Controller
         return RedirectToAction(nameof(Index));
 
     }
+    public ActionResult Detail ([FromQuery] int id)
+    {
+        var  department = db.Departments.Find(id);
+        return View(department); 
+    }
     public ActionResult Edit (int id)
     {
         var department = db.Departments.Find(id);

@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeManagement.Migrations
 {
     [DbContext(typeof(EMSContext))]
-    [Migration("20201206060339_DepartmentModelAdded")]
-    partial class DepartmentModelAdded
+    [Migration("20201210034007_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,12 +24,14 @@ namespace EmployeeManagement.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Code")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("StartDate")
@@ -49,6 +51,9 @@ namespace EmployeeManagement.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -65,7 +70,18 @@ namespace EmployeeManagement.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentId");
+
                     b.ToTable("People");
+                });
+
+            modelBuilder.Entity("Person", b =>
+                {
+                    b.HasOne("Department", "Department")
+                        .WithMany("People")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

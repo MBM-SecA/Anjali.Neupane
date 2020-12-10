@@ -13,6 +13,8 @@ public class Person
     public string Address{get;set;}
     public char? Gender{get;set;}='F';
     public double? Salary {get;set;}
+    public Department Department {get; set;}
+    public int DepartmentId {get; set;}
     /*
     public static List <Person> GetEmployees()
     {
