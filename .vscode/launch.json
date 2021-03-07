@@ -11,7 +11,7 @@
              "request": "launch",
              "preLaunchTask": "build",
              // If you have changed target frameworks, make sure to update the program path.
-             "program": "${workspaceFolder}/LINQ/bin/Debug/netcoreapp3.1/LINQ.dll",
+             "program": "${workspaceFolder}/LINQ/bin/Debug/netcoreapp5.0/LINQ.dll",
              "args": [],
              "cwd": "${workspaceFolder}/LINQ",
              // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
@@ -23,14 +23,14 @@
              "type": "coreclr",
              "request": "attach",
              "processId": "${command:pickProcess}"
-         }
-         {
+         },
+        {
             "name": "StudentsApi",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/LINQ/bin/Debug/netcoreapp3.1/LINQ.dll",
+            "program": "${workspaceFolder}/LINQ/bin/Debug/netcoreapp5.0/LINQ.dll",
             "args": [],
             "cwd": "${workspaceFolder}/LINQ",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
