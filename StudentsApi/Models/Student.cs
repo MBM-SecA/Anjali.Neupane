@@ -1,5 +1,5 @@
 using System;
-namespace StudentApi.Models
+namespace StudentsApi.Models
 {
     public class Student 
     {
